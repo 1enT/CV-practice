@@ -13,11 +13,9 @@ output_dir = "result"
 os.makedirs(output_dir, exist_ok=True)
 
 img = cv2.imread(image_path)
-h, w, _ = img.shape
 cv2.imwrite(os.path.join(output_dir, f"source.jpg"), img)
 
 results = model(image_path)[0]
-
 boxes_text = ""
 mrz_text_result = ""
 
